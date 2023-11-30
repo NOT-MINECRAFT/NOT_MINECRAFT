@@ -3,11 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to NOT_MINECRAFT Website</title>
+    <title>Encrypter Array Program</title>
+    <script>
+        function encrypt() {
+            var inputText = prompt("Enter a text:");
+            var result = "";
+            var character = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',' '];
+            var characterEncrypted = ['5','4','8','*','2','1','0','7','6','3','9','%','@','$','+','>','?','!','^','&','~','|','/','[',']','}','_'];
+
+            for (var i = 0; i < inputText.length; i++) {
+                var c = inputText.charAt(i);
+                for (var j = 0; j < character.length; j++) {
+                    if (c === character[j]) {
+                        result += characterEncrypted[j];
+                    }
+                }
+            }
+
+            alert("The encrypted message is: " + result);
+        }
+
+        function decrypt() {
+            var inputText = prompt("Enter an encrypted text:");
+            var result = "";
+            var character = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',' '];
+            var characterEncrypted = ['5','4','8','*','2','1','0','7','6','3','9','%','@','$','+','>','?','!','^','&','~','|','/','[',']','}','_'];
+
+            for (var i = 0; i < inputText.length; i++) {
+                var c = inputText.charAt(i);
+                for (var j = 0; j < characterEncrypted.length; j++) {
+                    if (c === characterEncrypted[j]) {
+                        result += character[j];
+                    }
+                }
+            }
+
+            alert("The decrypted message is: " + result);
+        }
+    </script>
 </head>
 <body>
-    <h1>Welcome to NOT_MINECRAFT Website</h1>
-    <p>Subscribe to our channel for updates and content!</p>
-    <a href="https://www.youtube.com/notminecraft" target="_blank">Subscribe</a>
+
+<h1>Encrypter Array Program</h1>
+
+<button onclick="encrypt()">Encrypt a Message</button>
+<button onclick="decrypt()">Decrypt a Message</button>
+
 </body>
 </html>
