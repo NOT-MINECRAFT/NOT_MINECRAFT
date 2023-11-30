@@ -3,15 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Encrypter Array Program</title>
+    <title>Shared Text</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        #inputBox {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        #messages {
+            border: 1px solid #ccc;
+            padding: 10px;
+            min-height: 200px;
+        }
+    </style>
 </head>
 <body>
 
-    <h1>Encrypter Array Program</h1>
+    <h1>Shared Text</h1>
 
-    <applet code="encrypter_array.class" width="400" height="300">
-        Your browser does not support the <code>applet</code> tag.
-    </applet>
+    <input type="text" id="inputBox" placeholder="Type your message...">
+    <button onclick="sendMessage()">Send</button>
+
+    <div id="messages"></div>
+
+    <script>
+        function sendMessage() {
+            var inputBox = document.getElementById('inputBox');
+            var message = inputBox.value;
+
+            if (message.trim() !== "") {
+                var messagesDiv = document.getElementById('messages');
+                var newMessage = document.createElement('p');
+                newMessage.textContent = message;
+                messagesDiv.appendChild(newMessage);
+
+                // Clear the input box after sending a message
+                inputBox.value = "";
+            }
+        }
+    </script>
 
 </body>
 </html>
