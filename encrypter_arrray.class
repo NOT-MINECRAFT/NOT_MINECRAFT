@@ -1,0 +1,55 @@
+import java.util.*;
+class encrypter_array{
+    void encrypt(){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter a text");
+        String s=sc.nextLine();
+        String ns="";
+        char character[]={'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',' '};
+        char character_encrypted[]={'5','4','8','*','2','1','0','7','6','3','9','%','@','$','+','>','?','!','^','&','~','|','/','[',']','}','_'};
+        for(int i=0; i<s.length();i++)
+        {
+            char c=s.charAt(i);
+            for(int j=0;j<character.length;j++)
+            {
+                if(c==character[j])
+                 ns=ns+character_encrypted[j];
+            }
+            
+        }
+        System.out.println("the message encrypted is ="+ ns);
+    }
+    void de_encrypt(){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter a encrypted text");
+        String s=sc.nextLine();
+        String ns="";
+        char character[]={'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',' '};
+        char character_encrypted[]={'5','4','8','*','2','1','0','7','6','3','9','%','@','$','+','>','?','!','^','&','~','|','/','[',']','}','_'};
+        for(int i=0; i<s.length();i++)
+        {
+            char c=s.charAt(i);
+            for(int j=0;j<character_encrypted.length;j++)
+            {
+                if(c==character_encrypted[j])
+                 ns=ns+character[j];
+            }
+            
+        }
+        System.out.println("the message de-encrypted is ="+ ns);
+    }
+    public static void main(){
+        Scanner sc=new Scanner(System.in);
+        encrypter_array ob=new encrypter_array();
+        System.out.println("enter 1:to encrypt a message or 2:to de-encrypt a message");
+        int choice=sc.nextInt();
+        if(choice==1)
+         ob.encrypt();
+         else if(choice==2)
+         ob.de_encrypt();
+        else
+         System.out.println("wrong choice!!! refresh the page and start again!");
+                
+    }
+    
+}
